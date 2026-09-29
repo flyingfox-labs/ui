@@ -1,0 +1,207 @@
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Surfaces */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-subtle: var(--foreground-subtle);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-elevated: var(--elevated);
+  --color-elevated-foreground: var(--elevated-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-input: var(--input);
+
+  /* Borders and focus */
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-outline: var(--outline);
+
+  /* Actions */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Status */
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Motion, type, radius */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --text-2xs: 0.6875rem;
+
+  --radius-xs: calc(var(--radius) * 0.4);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --radius: 0.16rem;
+
+  /* Palette */
+  --ink: oklch(0.2625 0.003 17.35);
+  --muted-ink: oklch(0.473 0.0061 67.68);
+  --line: oklch(0.9195 0.0087 84.57);
+  --orange: oklch(0.6648 0.1641 52.44);
+  --orange-light: oklch(0.7385 0.1643 56.65);
+
+  /* Surfaces */
+  --background: oklch(0.982 0.0041 91.45);
+  --foreground: var(--ink);
+  --foreground-subtle: var(--muted-ink);
+  --card: oklch(0.992 0.003 91.45);
+  --card-foreground: var(--foreground);
+  --elevated: oklch(0.997 0.002 91.45);
+  --elevated-foreground: var(--foreground);
+  --muted: color-mix(in oklab, var(--background), var(--foreground) 4%);
+  --muted-foreground: var(--muted-ink);
+  --input: color-mix(in oklab, var(--background), var(--foreground) 2.5%);
+
+  /* Borders and focus */
+  --border: var(--line);
+  --border-strong: color-mix(in oklab, var(--line), var(--foreground) 10%);
+  --outline: var(--accent);
+
+  /* Actions */
+  --primary: var(--orange);
+  --primary-foreground: var(--foreground);
+  --secondary: color-mix(in oklab, var(--background), var(--foreground) 6%);
+  --secondary-foreground: var(--foreground);
+  --accent: var(--orange-light);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.585 0.192 25.4);
+  --destructive-foreground: oklch(0.985 0.004 20);
+
+  /* Status */
+  --info: oklch(0.61 0.12 242);
+  --success: oklch(0.64 0.12 150);
+  --warning: oklch(0.78 0.14 72);
+  --error: var(--destructive);
+
+  /* Derived shades */
+  --primary-hover: color-mix(in oklab, var(--primary), var(--foreground) 10%);
+  --secondary-hover: color-mix(
+    in oklab,
+    var(--secondary),
+    var(--foreground) 6%
+  );
+  --accent-hover: color-mix(in oklab, var(--accent), var(--foreground) 10%);
+  --accent-border: color-mix(in oklab, var(--accent), var(--foreground) 14%);
+  --accent-light: color-mix(in oklab, var(--accent), var(--background) 18%);
+  --destructive-hover: color-mix(
+    in oklab,
+    var(--destructive),
+    var(--foreground) 10%
+  );
+  --destructive-border: color-mix(
+    in oklab,
+    var(--destructive),
+    var(--foreground) 12%
+  );
+
+  /* Scrollbar */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(0, 0, 0, 0.08);
+  --scrollbar-width: 20px;
+  --scrollbar-radius: 0px;
+}
+
+.dark {
+  /* Surfaces */
+  --background: oklch(0.155 0.0208 257);
+  --foreground: oklch(0.97 0.0078 257);
+  --foreground-subtle: oklch(0.58 0.0208 257);
+  --card: oklch(0.188 0.0234 257);
+  --card-foreground: oklch(0.97 0.0078 257);
+  --elevated: oklch(0.188 0.0234 257);
+  --elevated-foreground: oklch(0.97 0.0078 257);
+  --muted: oklch(0.2405 0.026 257);
+  --muted-foreground: oklch(0.72 0.0182 257);
+  --input: oklch(0.205 0.0234 257);
+
+  /* Borders and focus (focus inherits the accent link from :root) */
+  --border: oklch(0.255 0.0234 257);
+  --border-strong: oklch(0.325 0.0234 257);
+
+  /* Actions */
+  --primary: oklch(0.97 0.0078 257);
+  --primary-foreground: oklch(0.155 0.0208 257);
+  --secondary: oklch(0.226 0.026 257);
+  --secondary-foreground: oklch(0.97 0.0078 257);
+  --accent: oklch(0.851 0.127 332);
+  --accent-foreground: oklch(0.225 0.0252 286.1);
+  --destructive: oklch(0.513 0.189 10.3);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Status */
+  --info: oklch(0.887 0.081 220);
+  --success: oklch(0.942 0.127 134.3);
+  --warning: oklch(0.895 0.093 77.3);
+  --error: oklch(0.699 0.192 23.5);
+
+  /* Derived shades */
+  --primary-hover: color-mix(in oklab, var(--primary), var(--background) 8.6%);
+  --secondary-hover: color-mix(
+    in oklab,
+    var(--secondary),
+    var(--foreground) 10%
+  );
+  --accent-hover: color-mix(in oklab, var(--accent), var(--foreground) 20%);
+  --accent-border: color-mix(in oklab, var(--accent), var(--foreground) 15%);
+  --accent-light: color-mix(in oklab, var(--accent), var(--foreground) 45%);
+  --destructive-hover: color-mix(
+    in oklab,
+    var(--destructive),
+    var(--background) 7.5%
+  );
+  --destructive-border: color-mix(
+    in oklab,
+    var(--destructive),
+    var(--foreground) 5%
+  );
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  * {
+    @apply outline-outline/40;
+  }
+}
+
+/* Thin, subtle scrollbar utility for any scrollable surface. Library elements
+   that scroll carry the same treatment in their own CSS, keyed off data-slot. */
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+.thin-scrollbar::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-radius);
+}
