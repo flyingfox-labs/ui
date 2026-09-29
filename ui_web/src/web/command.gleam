@@ -2,8 +2,8 @@ import gleam/list
 import lustre/attribute.{type Attribute}
 import lustre/element.{type Element}
 import lustre/element/html
-import ui/dialog
 import ui/icon
+import web/dialog
 
 @external(javascript, "./command.ffi.mjs", "init")
 pub fn init() -> Nil
