@@ -3,8 +3,6 @@ import filepath
 import gleam/result
 import simplifile
 
-pub const stylesheet_url = "https://raw.githubusercontent.com/flyingfox-labs/ui/main/ui/src/ui.css"
-
 pub fn output_path() -> Result(String, String) {
   case argv.load().arguments {
     [path] -> Ok(path)
